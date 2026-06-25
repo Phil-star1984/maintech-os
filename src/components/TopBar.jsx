@@ -5,11 +5,13 @@ import { isSoundEnabled, toggleSound } from "../utils/sounds";
 export default function TopBar({
   searchQuery,
   onSearchChange,
+  onHome,
   onExplore,
   onRandom,
   onNormalize,
   onNewsletter,
   onApi,
+  onRadar,
   onFeedback,
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,6 +23,7 @@ export default function TopBar({
 
   const navItems = [
     { label: "Events", action: onExplore },
+    { label: "Radar", action: onRadar },
     { label: "API", action: onApi },
     { label: "Random", action: onRandom },
     { label: "Normalize", action: onNormalize },
@@ -34,6 +37,12 @@ export default function TopBar({
 
   const handleSoundToggle = () => {
     setSoundOn(toggleSound());
+  };
+
+  const handleRadar = () => {
+    setUserOpen(false);
+    setMenuOpen(false);
+    onRadar();
   };
 
   const handleAuthHint = (label) => {
@@ -81,7 +90,7 @@ export default function TopBar({
           className="topbar__brand"
           onClick={(e) => {
             e.preventDefault();
-            onExplore();
+            onHome();
           }}
         >
           <BrandLogo />
@@ -129,44 +138,44 @@ export default function TopBar({
             aria-expanded={userOpen}
             aria-controls={userMenuId}
             aria-haspopup="menu"
-            aria-label="Account — Phil"
+            aria-label="Anmelden und Radar öffnen"
           >
-            Phil
+            Anmelden
           </button>
 
           {userOpen && (
             <div id={userMenuId} className="topbar__user-menu" role="menu">
               <div className="topbar__user-menu-profile">
                 <div>
-                  <p className="topbar__user-menu-name">Phil</p>
-                  <p className="topbar__user-menu-email mono">phil@maintech.local</p>
+                  <p className="topbar__user-menu-name">Noch kein Profil</p>
+                  <p className="topbar__user-menu-email mono">Radar-Interessen in 30 Sekunden wählen</p>
                 </div>
               </div>
               <button
                 type="button"
-                className="topbar__user-menu-btn"
+                className="topbar__user-menu-btn topbar__user-menu-btn--primary"
                 role="menuitem"
-                onClick={() => handleAuthHint("Profil")}
+                onClick={handleRadar}
               >
-                Mein Profil
+                MainTech Radar starten
               </button>
               <button
                 type="button"
                 className="topbar__user-menu-btn"
                 role="menuitem"
-                onClick={() => handleAuthHint("Gespeicherte Events")}
+                onClick={handleRadar}
               >
-                Gespeicherte Events
+                Interessen auswählen
               </button>
               <button
                 type="button"
-                className="topbar__user-menu-btn topbar__user-menu-btn--muted"
+                className="topbar__user-menu-btn"
                 role="menuitem"
-                onClick={() => handleAuthHint("Abmelden")}
+                onClick={() => handleAuthHint("Login")}
               >
-                Abmelden
+                Mit E-Mail anmelden
               </button>
-              <p className="topbar__user-menu-fine mono">Demo-Session — MVP Preview</p>
+              <p className="topbar__user-menu-fine mono">Demo-Onboarding — speichert lokal im Browser</p>
             </div>
           )}
         </div>
@@ -232,18 +241,18 @@ export default function TopBar({
             <button
               type="button"
               className="topbar__menu-link"
-              onClick={() => handleAuthHint("Profil")}
+              onClick={handleRadar}
             >
               <span className="mono topbar__menu-prompt">&gt;</span>
-              Phil — Profil
+              MainTech Radar starten
             </button>
             <button
               type="button"
               className="topbar__menu-link"
-              onClick={() => handleAuthHint("Gespeicherte Events")}
+              onClick={handleRadar}
             >
               <span className="mono topbar__menu-prompt">&gt;</span>
-              Gespeicherte Events
+              Interessen auswählen
             </button>
           </nav>
         </>

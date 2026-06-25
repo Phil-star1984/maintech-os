@@ -10,6 +10,7 @@ import EventNormalizer from "./components/EventNormalizer";
 import Footer from "./components/Footer";
 import NewsletterSection from "./components/NewsletterSection";
 import ApiSection from "./components/ApiSection";
+import RadarPage from "./components/RadarPage";
 import { fallbackEvents } from "./data/fallbackEvents";
 import {
   filterEvents,
@@ -25,6 +26,9 @@ export default function App() {
   const [activeFilters, setActiveFilters] = useState(["all"]);
   const [savedIds, setSavedIds] = useState(() => getSavedIds());
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [activePage, setActivePage] = useState(() =>
+    window.location.hash === "#radar" ? "radar" : "home"
+  );
   const [toast, setToast] = useState("");
 
   useEffect(() => {
@@ -76,7 +80,23 @@ export default function App() {
   };
 
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setActivePage("home");
+    window.history.replaceState(null, "", window.location.pathname);
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
+  };
+
+  const showHome = () => {
+    setActivePage("home");
+    window.history.replaceState(null, "", window.location.pathname);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const showRadar = () => {
+    setActivePage("radar");
+    window.history.replaceState(null, "", "#radar");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleRandom = () => {
@@ -91,53 +111,70 @@ export default function App() {
       <TopBar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        onHome={showHome}
         onExplore={() => scrollTo("events")}
         onRandom={handleRandom}
         onNormalize={() => scrollTo("event-normalizer")}
         onNewsletter={() => scrollTo("newsletter")}
         onApi={() => scrollTo("api")}
+        onRadar={showRadar}
         onFeedback={showToast}
       />
 
-      <Header onExplore={() => scrollTo("events")} onRandom={handleRandom} />
+      {activePage === "radar" ? (
+        <>
+          <RadarPage
+            events={events.length ? events : fallbackEvents}
+            onBack={showHome}
+            onFeedback={showToast}
+          />
+          <div className="page page--footer">
+            <Footer />
+          </div>
+        </>
+      ) : (
+        <>
+          <Header onExplore={() => scrollTo("events")} onRandom={handleRandom} onRadar={showRadar} />
 
-      <div className="page">
-        <StatsStrip stats={stats} />
+          <div className="page">
+            <StatsStrip stats={stats} />
 
-        <main className="main">
-          <section id="events" className="events-section">
-            <FilterBar activeFilters={activeFilters} onToggleFilter={handleToggleFilter} />
+            <main className="main">
+              <section id="events" className="events-section">
+                <FilterBar activeFilters={activeFilters} onToggleFilter={handleToggleFilter} />
 
-            {loading ? (
-              <p className="loading mono" role="status">&gt; loading events.json…</p>
-            ) : (
-              <EventGrid
-                events={filteredEvents}
-                totalCount={events.length}
-                savedIds={savedIds}
-                onToggleSave={handleToggleSave}
-                onOpenDetail={setSelectedEvent}
-                onCopyFeedback={showToast}
-              />
-            )}
-          </section>
-        </main>
-      </div>
+                {loading ? (
+                  <p className="loading mono" role="status">&gt; loading events.json…</p>
+                ) : (
+                  <EventGrid
+                    events={filteredEvents}
+                    totalCount={events.length}
+                    savedIds={savedIds}
+                    onToggleSave={handleToggleSave}
+                    onOpenDetail={setSelectedEvent}
+                    onCopyFeedback={showToast}
+                  />
+                )}
+              </section>
+            </main>
+          </div>
 
-      <ApiSection onFeedback={showToast} />
+          <ApiSection onFeedback={showToast} />
 
-      <div className="page">
-        <main className="main">
-          <RandomEvent events={events} onOpenDetail={setSelectedEvent} />
-          <EventNormalizer onCopyFeedback={showToast} />
-        </main>
-      </div>
+          <div className="page">
+            <main className="main">
+              <RandomEvent events={events} onOpenDetail={setSelectedEvent} />
+              <EventNormalizer onCopyFeedback={showToast} />
+            </main>
+          </div>
 
-      <NewsletterSection onFeedback={showToast} />
+          <NewsletterSection onFeedback={showToast} />
 
-      <div className="page page--footer">
-        <Footer />
-      </div>
+          <div className="page page--footer">
+            <Footer />
+          </div>
+        </>
+      )}
 
       {selectedEvent && (
         <EventDetail
