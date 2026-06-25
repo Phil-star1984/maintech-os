@@ -355,5 +355,37 @@ export const fallbackEvents = [
     "signupUrl": "https://secops-mainfranken.de/meetup",
     "image": "/images/events/cybersecurity-meetup-bamberg.jpg",
     "status": "upcoming"
+  },
+  {
+    "id": "transforming-media-2026",
+    "title": "Transforming Media 2026",
+    "startsAt": "2026-07-07T12:00:00+02:00",
+    "endsAt": "2026-07-07T18:00:00+02:00",
+    "dateLabel": "7. Juli 2026",
+    "timeLabel": "ab 12:00",
+    "location": "Vogel Convention Center, Max-Planck-Straße 7/9, 97082 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "MedienNetzwerk Bayern / Medien.Bayern GmbH",
+    "topics": [
+      "AI",
+      "Design",
+      "Startup"
+    ],
+    "audience": [
+      "Media professionals",
+      "Marketers",
+      "Communications teams",
+      "Students",
+      "Founders"
+    ],
+    "description": "Free conference on media, communication and marketing with a 2026 focus on agentic AI systems, digital sovereignty, hyper-personalization and micro communities.",
+    "whyGo": "A high-signal Würzburg event for seeing how AI agents and automation reshape communication, marketing and media work — with Expo, workshops and networking.",
+    "sourceUrl": "https://transformingmedia.de",
+    "signupUrl": "https://tickets.medientage.de/event/transforming-media-2026-i0f7c6",
+    "image": "/images/events/llm-engineering-workshop.jpg",
+    "status": "upcoming"
   }
 ];
