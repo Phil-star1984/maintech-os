@@ -1,0 +1,359 @@
+export const fallbackEvents = [
+  {
+    "id": "ai-vibe-hackathon-4",
+    "title": "AI Vibe Hackathon #4",
+    "startsAt": "2026-06-25T10:00:00+02:00",
+    "endsAt": "2026-06-26T18:00:00+02:00",
+    "dateLabel": "25.–26. Juni 2026",
+    "timeLabel": "2 Tage",
+    "location": "ZDI Ideenlabor, Rottendorfer Str. 71, 97074 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "AI Week Mainfranken",
+    "topics": [
+      "AI",
+      "Hackathon",
+      "Community"
+    ],
+    "audience": [
+      "Developers",
+      "Designers",
+      "Creators",
+      "Founders",
+      "AI enthusiasts"
+    ],
+    "description": "Build a prototype in two days and connect with the regional AI community.",
+    "whyGo": "A compact way to meet people, build something real and become visible in the local AI scene.",
+    "sourceUrl": "https://aiweek-mainfranken.de",
+    "signupUrl": "https://aiweek-mainfranken.de/hackathon",
+    "image": "/images/events/ai-vibe-hackathon-4.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "ai-x-art-kreativitaet",
+    "title": "AI x Art – Kreativität mit KI erweitern",
+    "startsAt": "2026-07-03T18:30:00+02:00",
+    "endsAt": "2026-07-03T21:00:00+02:00",
+    "dateLabel": "3. Juli 2026",
+    "timeLabel": "18:30–21:00",
+    "location": "Kulturhaus Würzburg, Mainkai 1, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "€12",
+    "level": "All levels",
+    "organizer": "Creative Mainfranken",
+    "topics": [
+      "AI",
+      "Design",
+      "Community"
+    ],
+    "audience": [
+      "Designers",
+      "Artists",
+      "Creators",
+      "AI enthusiasts"
+    ],
+    "description": "Workshop and showcase exploring how AI tools expand creative workflows in art, design and media.",
+    "whyGo": "See live demos, swap prompts and meet creatives who are shaping Mainfranken's AI-art scene.",
+    "sourceUrl": "https://creative-mainfranken.de",
+    "signupUrl": "https://creative-mainfranken.de/ai-art",
+    "image": "/images/events/ai-x-art-kreativitaet.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "ki-kirchenkino",
+    "title": "KI Kirchenkino",
+    "startsAt": "2026-07-10T19:00:00+02:00",
+    "endsAt": "2026-07-10T22:00:00+02:00",
+    "dateLabel": "10. Juli 2026",
+    "timeLabel": "19:00–22:00",
+    "location": "St. Stephan, Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "KI Kultur Mainfranken",
+    "topics": [
+      "AI",
+      "Community"
+    ],
+    "audience": [
+      "General public",
+      "Students",
+      "AI enthusiasts"
+    ],
+    "description": "Film screening and panel discussion on AI, ethics and society in an unusual venue.",
+    "whyGo": "Accessible entry into AI topics beyond tech bubbles — culture meets technology.",
+    "sourceUrl": "https://ki-kultur-mainfranken.de",
+    "signupUrl": "https://ki-kultur-mainfranken.de/kirchenkino",
+    "image": "/images/events/ki-kirchenkino.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "data-science-meetup-wuerzburg",
+    "title": "Data Science Meetup Würzburg",
+    "startsAt": "2026-07-15T18:00:00+02:00",
+    "endsAt": "2026-07-15T21:00:00+02:00",
+    "dateLabel": "15. Juli 2026",
+    "timeLabel": "18:00–21:00",
+    "location": "TechHub Würzburg, Kaiserstraße 26, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Intermediate",
+    "organizer": "Data Science Würzburg",
+    "topics": [
+      "Data",
+      "Coding",
+      "Community"
+    ],
+    "audience": [
+      "Data scientists",
+      "Developers",
+      "Analysts"
+    ],
+    "description": "Lightning talks on ML pipelines, local datasets and open-source data tooling.",
+    "whyGo": "Connect with practitioners working on real data problems in the region.",
+    "sourceUrl": "https://meetup.com/data-science-wuerzburg",
+    "signupUrl": "https://meetup.com/data-science-wuerzburg",
+    "image": "/images/events/data-science-meetup-wuerzburg.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "startup-night-mainfranken",
+    "title": "Startup Night Mainfranken",
+    "startsAt": "2026-07-18T17:00:00+02:00",
+    "endsAt": "2026-07-18T22:00:00+02:00",
+    "dateLabel": "18. Juli 2026",
+    "timeLabel": "17:00–22:00",
+    "location": "Würzburg Business School, Sanderring 2, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "Startup Mainfranken",
+    "topics": [
+      "Startup",
+      "Community"
+    ],
+    "audience": [
+      "Founders",
+      "Investors",
+      "Students",
+      "Developers"
+    ],
+    "description": "Pitch night, founder stories and networking for early-stage teams across Mainfranken.",
+    "whyGo": "The fastest way to see who's building what locally and find co-founders or mentors.",
+    "sourceUrl": "https://startup-mainfranken.de",
+    "signupUrl": "https://startup-mainfranken.de/night",
+    "image": "/images/events/startup-night-mainfranken.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "repair-cafe-tech-edition",
+    "title": "Repair Café Tech Edition",
+    "startsAt": "2026-06-28T14:00:00+02:00",
+    "endsAt": "2026-06-28T17:00:00+02:00",
+    "dateLabel": "28. Juni 2026",
+    "timeLabel": "14:00–17:00",
+    "location": "Makerspace Schweinfurt, Markt 12, 97421 Schweinfurt",
+    "city": "Schweinfurt",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "Makerspace Mainfranken",
+    "topics": [
+      "Community",
+      "Coding"
+    ],
+    "audience": [
+      "Makers",
+      "Students",
+      "General public"
+    ],
+    "description": "Fix laptops, phones and gadgets with volunteer tech experts. Learn soldering and debugging basics.",
+    "whyGo": "Sustainable tech culture, hands-on learning and community spirit outside the startup bubble.",
+    "sourceUrl": "https://makerspace-mainfranken.de",
+    "signupUrl": "https://makerspace-mainfranken.de/repair",
+    "image": "/images/events/repair-cafe-tech-edition.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "open-coding-night",
+    "title": "Open Coding Night",
+    "startsAt": "2026-07-02T19:00:00+02:00",
+    "endsAt": "2026-07-02T22:00:00+02:00",
+    "dateLabel": "2. Juli 2026",
+    "timeLabel": "19:00–22:00",
+    "location": "CoWorking Aschaffenburg, Ludwigstraße 8, 63739 Aschaffenburg",
+    "city": "Aschaffenburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "Code & Coffee Mainfranken",
+    "topics": [
+      "Coding",
+      "Community"
+    ],
+    "audience": [
+      "Developers",
+      "Students",
+      "Career changers"
+    ],
+    "description": "Bring your side project, pair program or just hang out with fellow coders.",
+    "whyGo": "Low-pressure environment to make progress on personal projects and find coding buddies.",
+    "sourceUrl": "https://code-coffee-mainfranken.de",
+    "signupUrl": "https://code-coffee-mainfranken.de/open-night",
+    "image": "/images/events/open-coding-night.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "ux-ui-design-jam",
+    "title": "UX/UI Design Jam",
+    "startsAt": "2026-07-22T10:00:00+02:00",
+    "endsAt": "2026-07-22T16:00:00+02:00",
+    "dateLabel": "22. Juli 2026",
+    "timeLabel": "10:00–16:00",
+    "location": "Design Studio Würzburg, Dominikanerplatz 7, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "€25",
+    "level": "Beginner-friendly",
+    "organizer": "Design Mainfranken",
+    "topics": [
+      "Design",
+      "Startup"
+    ],
+    "audience": [
+      "Designers",
+      "Product managers",
+      "Founders"
+    ],
+    "description": "One-day design sprint: research, wireframe and prototype a local community app challenge.",
+    "whyGo": "Practice UX methods with real feedback from experienced designers in the region.",
+    "sourceUrl": "https://design-mainfranken.de",
+    "signupUrl": "https://design-mainfranken.de/jam",
+    "image": "/images/events/ux-ui-design-jam.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "ai-tools-breakfast",
+    "title": "AI Tools Breakfast",
+    "startsAt": "2026-06-26T08:00:00+02:00",
+    "endsAt": "2026-06-26T10:00:00+02:00",
+    "dateLabel": "26. Juni 2026",
+    "timeLabel": "08:00–10:00",
+    "location": "Café Zeitlos, Theaterstraße 11, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "€8",
+    "level": "Beginner-friendly",
+    "organizer": "AI Week Mainfranken",
+    "topics": [
+      "AI",
+      "Startup"
+    ],
+    "audience": [
+      "Founders",
+      "Developers",
+      "Product managers"
+    ],
+    "description": "Morning session: demo the latest AI tools for productivity, coding and content creation.",
+    "whyGo": "Start your day with concrete tool tips you can use immediately at work.",
+    "sourceUrl": "https://aiweek-mainfranken.de",
+    "signupUrl": "https://aiweek-mainfranken.de/breakfast",
+    "image": "/images/events/ai-tools-breakfast.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "mainfranken-founder-walk",
+    "title": "Mainfranken Founder Walk",
+    "startsAt": "2026-07-05T07:30:00+02:00",
+    "endsAt": "2026-07-05T09:30:00+02:00",
+    "dateLabel": "5. Juli 2026",
+    "timeLabel": "07:30–09:30",
+    "location": "Marienberg Festung, Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "Startup Mainfranken",
+    "topics": [
+      "Startup",
+      "Community"
+    ],
+    "audience": [
+      "Founders",
+      "Investors",
+      "Operators"
+    ],
+    "description": "Early morning walk and talk for founders — no slides, just honest conversations with a view.",
+    "whyGo": "Networking without the noise. Great for meeting founders in a relaxed setting.",
+    "sourceUrl": "https://startup-mainfranken.de",
+    "signupUrl": "https://startup-mainfranken.de/founder-walk",
+    "image": "/images/events/mainfranken-founder-walk.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "llm-engineering-workshop",
+    "title": "LLM Engineering Workshop",
+    "startsAt": "2026-07-08T09:00:00+02:00",
+    "endsAt": "2026-07-08T17:00:00+02:00",
+    "dateLabel": "8. Juli 2026",
+    "timeLabel": "09:00–17:00",
+    "location": "TH Würzburg-Schweinfurt, Campus Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "€49",
+    "level": "Intermediate",
+    "organizer": "AI Week Mainfranken",
+    "topics": [
+      "AI",
+      "Coding",
+      "Data"
+    ],
+    "audience": [
+      "Developers",
+      "ML engineers",
+      "Tech leads"
+    ],
+    "description": "Hands-on workshop on RAG pipelines, prompt engineering and deploying LLM applications.",
+    "whyGo": "Go beyond demos — learn production patterns from practitioners in the region.",
+    "sourceUrl": "https://aiweek-mainfranken.de",
+    "signupUrl": "https://aiweek-mainfranken.de/llm-workshop",
+    "image": "/images/events/llm-engineering-workshop.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "cybersecurity-meetup-bamberg",
+    "title": "Cybersecurity Meetup Bamberg",
+    "startsAt": "2026-07-12T18:30:00+02:00",
+    "endsAt": "2026-07-12T21:00:00+02:00",
+    "dateLabel": "12. Juli 2026",
+    "timeLabel": "18:30–21:00",
+    "location": "Otto-Friedrich-Universität Bamberg, An der Weberei 5",
+    "city": "Bamberg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Intermediate",
+    "organizer": "SecOps Mainfranken",
+    "topics": [
+      "Coding",
+      "Community",
+      "Data"
+    ],
+    "audience": [
+      "Security engineers",
+      "Developers",
+      "IT admins"
+    ],
+    "description": "Talks on threat modeling, secure coding and incident response for regional teams.",
+    "whyGo": "Stay current on security practices with peers who understand local infrastructure constraints.",
+    "sourceUrl": "https://secops-mainfranken.de",
+    "signupUrl": "https://secops-mainfranken.de/meetup",
+    "image": "/images/events/cybersecurity-meetup-bamberg.jpg",
+    "status": "upcoming"
+  }
+];
