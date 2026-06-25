@@ -5,19 +5,25 @@ const RADAR_STORAGE_KEY = "maintech-radar-profile";
 
 const topicOptions = ["AI", "Coding", "Startup", "Design", "Data", "Community", "Hackathon"];
 const formatOptions = ["In person", "Online", "Hybrid"];
-const radiusOptions = ["Würzburg", "Mainfranken", "+50 km", "Online first"];
 
 const defaultProfile = {
   topics: ["AI", "Startup"],
   formats: ["In person"],
-  radius: "Mainfranken",
+  radiusKm: 50,
   digest: "weekly",
 };
 
 const loadProfile = () => {
   try {
     const stored = window.localStorage.getItem(RADAR_STORAGE_KEY);
-    return stored ? { ...defaultProfile, ...JSON.parse(stored) } : defaultProfile;
+    if (!stored) return defaultProfile;
+    const parsed = JSON.parse(stored);
+    const legacyRadius = parsed.radius === "Würzburg" ? 10 : 50;
+    return {
+      ...defaultProfile,
+      ...parsed,
+      radiusKm: Number(parsed.radiusKm ?? legacyRadius),
+    };
   } catch {
     return defaultProfile;
   }
@@ -32,8 +38,9 @@ const getMatches = (events, profile) => {
   const scored = events.map((event) => {
     const topicHits = event.topics?.filter((topic) => profile.topics.includes(topic)).length ?? 0;
     const formatHit = profile.formats.includes(event.format) ? 1 : 0;
-    const cityHit = profile.radius === "Würzburg" ? event.city === "Würzburg" : true;
-    const score = topicHits * 2 + formatHit + (cityHit ? 1 : 0);
+    const localHit = profile.radiusKm >= 25 || event.city === "Würzburg" ? 1 : 0;
+    const regionBoost = profile.radiusKm >= 50 ? 1 : 0;
+    const score = topicHits * 2 + formatHit + localHit + regionBoost;
     return { event, score, topicHits };
   });
 
@@ -110,7 +117,6 @@ export default function RadarPage({
       <section className="radar-grid" aria-label="Radar Einstellungen und Empfehlungen">
         <div className="radar-panel radar-panel--setup">
           <div className="radar-panel__head">
-            <p className="radar-step mono">01</p>
             <h2>Interessen wählen</h2>
           </div>
           <p className="radar-panel__copy">
@@ -149,19 +155,25 @@ export default function RadarPage({
           </div>
 
           <div className="radar-fieldset">
-            <p className="radar-label mono">radius</p>
-            <div className="radar-options radar-options--compact">
-              {radiusOptions.map((radius) => (
-                <button
-                  key={radius}
-                  type="button"
-                  className={`radar-chip ${profile.radius === radius ? "radar-chip--active" : ""}`}
-                  onClick={() => updateProfile({ ...profile, radius })}
-                  aria-pressed={profile.radius === radius}
-                >
-                  {radius}
-                </button>
-              ))}
+            <div className="radar-slider-head">
+              <p className="radar-label mono">radius</p>
+              <p className="radar-slider-value mono">{profile.radiusKm} km</p>
+            </div>
+            <label className="radar-range-label">
+              <span className="visually-hidden">Radius in Kilometern</span>
+              <input
+                type="range"
+                min="5"
+                max="100"
+                step="5"
+                value={profile.radiusKm}
+                onChange={(e) => updateProfile({ ...profile, radiusKm: Number(e.target.value) })}
+              />
+            </label>
+            <div className="radar-range-scale mono" aria-hidden="true">
+              <span>5 km</span>
+              <span>50 km</span>
+              <span>100 km</span>
             </div>
           </div>
 
@@ -181,7 +193,6 @@ export default function RadarPage({
         <div className="radar-panel radar-panel--events">
           <div className="radar-panel__head radar-panel__head--split">
             <div>
-              <p className="radar-step mono">02</p>
               <h2>Deine Radar-Empfehlungen</h2>
             </div>
             <p className="radar-count mono">{recommendedEvents.length} matches</p>
