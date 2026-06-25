@@ -2277,3 +2277,72 @@ kbd {
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
+
+/* ── Radar refinements: align with homepage event cards ── */
+.radar-hero__title {
+  font-family: var(--font-display);
+  max-width: 15ch;
+}
+
+.radar-hero__sub,
+.radar-panel,
+.radar-chip,
+.radar-select-label select {
+  font-family: var(--font-sans);
+}
+
+@media (min-width: 960px) {
+  .radar-grid {
+    grid-template-columns: minmax(17rem, 0.34fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.radar-panel--setup {
+  position: sticky;
+  top: calc(var(--topbar-h) + 1rem);
+}
+
+.radar-panel--events {
+  border-color: rgba(57, 255, 20, 0.2);
+  background: linear-gradient(180deg, rgba(57, 255, 20, 0.035), var(--bg-card));
+}
+
+.radar-panel__head--split {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.radar-panel__head--split .radar-step {
+  margin-bottom: 0.15rem;
+}
+
+.radar-count {
+  margin: 0;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(57, 255, 20, 0.24);
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: rgba(57, 255, 20, 0.08);
+  white-space: nowrap;
+}
+
+.radar-event-grid {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .radar-event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .radar-event-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.radar-event-grid .event-card {
+  min-width: 0;
+}

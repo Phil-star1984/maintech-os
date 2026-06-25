@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import EventCard from "./EventCard";
 
 const RADAR_STORAGE_KEY = "maintech-radar-profile";
 
@@ -39,13 +40,21 @@ const getMatches = (events, profile) => {
   return scored
     .filter(({ score, topicHits, event }) => score > 0 && topicHits > 0 && event.status !== "past")
     .sort((a, b) => b.score - a.score || a.event.startsAt.localeCompare(b.event.startsAt))
-    .slice(0, 3)
+    .slice(0, 6)
     .map(({ event }) => event);
 };
 
-export default function RadarPage({ events, onBack, onFeedback }) {
+export default function RadarPage({
+  events,
+  savedIds = [],
+  onToggleSave,
+  onOpenDetail,
+  onBack,
+  onFeedback,
+}) {
   const [profile, setProfile] = useState(loadProfile);
   const matches = useMemo(() => getMatches(events, profile), [events, profile]);
+  const recommendedEvents = matches.length ? matches : events.slice(0, 6);
 
   const updateProfile = (nextProfile) => {
     setProfile(nextProfile);
@@ -71,25 +80,25 @@ export default function RadarPage({ events, onBack, onFeedback }) {
         <div className="radar-hero__content">
           <p className="radar-eyebrow mono">maintech radar // private beta</p>
           <h1 id="radar-title" className="radar-hero__title">
-            Sag uns, was dich interessiert — wir zeigen dir die Events, die wirklich passen.
+            Dein persönlicher Event-Radar für Mainfranken.
           </h1>
           <p className="radar-hero__sub">
-            Der Radar ist die Onboarding-Unterseite für deinen persönlichen Tech-Event-Feed:
-            Interessen wählen, Radius setzen und direkt sehen, welche Veranstaltungen relevant sind.
+            Wähle kurz deine Interessen. Danach zeigt MainTech OS dieselben Event-Karten wie auf
+            der Startseite — nur vorsortiert nach dem, was für dich wirklich relevant ist.
           </p>
           <div className="radar-hero__actions">
-            <button type="button" className="radar-btn radar-btn--primary" onClick={handleSave}>
+            <button type="button" className="hero-cd__btn hero-cd__btn--primary" onClick={handleSave}>
               Radar aktivieren <span aria-hidden="true">→</span>
             </button>
-            <button type="button" className="radar-btn radar-btn--ghost" onClick={onBack}>
+            <button type="button" className="hero-cd__btn hero-cd__btn--ghost" onClick={onBack}>
               Zurück zu allen Events
             </button>
           </div>
         </div>
         <aside className="radar-terminal" aria-label="Radar Vorschau">
-          <p className="radar-terminal__line mono">$ maintech radar --for you</p>
-          <p className="radar-terminal__big">{matches.length || events.length}</p>
-          <p className="radar-terminal__label mono">relevante Signale gefunden</p>
+          <p className="radar-terminal__line mono">$ maintech radar --for-you</p>
+          <p className="radar-terminal__big">{recommendedEvents.length}</p>
+          <p className="radar-terminal__label mono">Event-Karten im persönlichen Feed</p>
           <div className="radar-terminal__chips">
             {profile.topics.slice(0, 4).map((topic) => (
               <span key={topic}>{topic}</span>
@@ -98,14 +107,15 @@ export default function RadarPage({ events, onBack, onFeedback }) {
         </aside>
       </section>
 
-      <section className="radar-grid" aria-label="Radar Einstellungen">
-        <div className="radar-panel">
+      <section className="radar-grid" aria-label="Radar Einstellungen und Empfehlungen">
+        <div className="radar-panel radar-panel--setup">
           <div className="radar-panel__head">
             <p className="radar-step mono">01</p>
             <h2>Interessen wählen</h2>
           </div>
           <p className="radar-panel__copy">
-            Damit MainTech OS nicht nur ein Kalender bleibt, sondern dein persönlicher Event-Radar wird.
+            Das ist der Onboarding-Moment: Der User sagt, was er sehen will — und bekommt danach
+            einen personalisierten Feed statt einer generischen Liste.
           </p>
           <div className="radar-options">
             {topicOptions.map((topic) => (
@@ -120,13 +130,7 @@ export default function RadarPage({ events, onBack, onFeedback }) {
               </button>
             ))}
           </div>
-        </div>
 
-        <div className="radar-panel">
-          <div className="radar-panel__head">
-            <p className="radar-step mono">02</p>
-            <h2>Wie willst du Events finden?</h2>
-          </div>
           <div className="radar-fieldset">
             <p className="radar-label mono">format</p>
             <div className="radar-options radar-options--compact">
@@ -143,6 +147,7 @@ export default function RadarPage({ events, onBack, onFeedback }) {
               ))}
             </div>
           </div>
+
           <div className="radar-fieldset">
             <p className="radar-label mono">radius</p>
             <div className="radar-options radar-options--compact">
@@ -159,6 +164,7 @@ export default function RadarPage({ events, onBack, onFeedback }) {
               ))}
             </div>
           </div>
+
           <label className="radar-select-label">
             <span className="mono">digest</span>
             <select
@@ -172,23 +178,30 @@ export default function RadarPage({ events, onBack, onFeedback }) {
           </label>
         </div>
 
-        <div className="radar-panel radar-panel--preview">
-          <div className="radar-panel__head">
-            <p className="radar-step mono">03</p>
-            <h2>Dein erster Radar</h2>
+        <div className="radar-panel radar-panel--events">
+          <div className="radar-panel__head radar-panel__head--split">
+            <div>
+              <p className="radar-step mono">02</p>
+              <h2>Deine Radar-Empfehlungen</h2>
+            </div>
+            <p className="radar-count mono">{recommendedEvents.length} matches</p>
           </div>
-          <div className="radar-recs">
-            {(matches.length ? matches : events.slice(0, 3)).map((event) => (
-              <article className="radar-rec" key={event.id}>
-                <p className="radar-rec__date mono">{event.dateLabel} · {event.city}</p>
-                <h3>{event.title}</h3>
-                <p>{event.whyGo}</p>
-                <div className="radar-rec__tags">
-                  {event.topics?.slice(0, 3).map((topic) => <span key={topic}>{topic}</span>)}
-                </div>
-              </article>
+          <p className="radar-panel__copy">
+            Gleiche Karten, gleiche Bilder, gleiche Informationen und Aktionen wie auf der Hauptseite —
+            nur vom Radar kuratiert.
+          </p>
+          <section className="event-grid radar-event-grid" aria-label="Personalisierte Event-Empfehlungen">
+            {recommendedEvents.map((event) => (
+              <EventCard
+                key={event.id}
+                event={event}
+                saved={savedIds.includes(event.id)}
+                onToggleSave={onToggleSave}
+                onOpenDetail={onOpenDetail}
+                onCopyFeedback={onFeedback}
+              />
             ))}
-          </div>
+          </section>
         </div>
       </section>
     </main>

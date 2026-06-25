@@ -125,6 +125,9 @@ export default function App() {
         <>
           <RadarPage
             events={events.length ? events : fallbackEvents}
+            savedIds={savedIds}
+            onToggleSave={handleToggleSave}
+            onOpenDetail={setSelectedEvent}
             onBack={showHome}
             onFeedback={showToast}
           />
