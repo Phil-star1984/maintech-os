@@ -19,6 +19,7 @@ export default function EventCard({
   event,
   saved = false,
   preview = false,
+  past = false,
   onToggleSave,
   onOpenDetail,
   onCopyFeedback,
@@ -49,7 +50,7 @@ export default function EventCard({
 
   return (
     <article
-      className={`event-card${preview ? " event-card--preview" : ""}`}
+      className={`event-card${preview ? " event-card--preview" : ""}${past ? " event-card--past" : ""}`}
       {...cardProps}
     >
       <div className="event-card__banner">
@@ -64,7 +65,7 @@ export default function EventCard({
           />
         )}
         <div className="event-card__banner-overlay" aria-hidden="true" />
-        <span className="event-card__format mono">{badge}</span>
+        <span className="event-card__format mono">{past ? "Archiv" : badge}</span>
         {!preview && (
           <button
             type="button"

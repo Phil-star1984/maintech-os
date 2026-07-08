@@ -2,6 +2,69 @@ import { resolveEventImageForTopics } from "./eventImages";
 
 const SAVED_KEY = "maintech_saved_events";
 
+export const UPCOMING_WINDOW_WEEKS = 6;
+
+export const getEventEndMs = (event) => {
+  const end = event.endsAt ? new Date(event.endsAt) : new Date(event.startsAt);
+  return end.getTime();
+};
+
+export const isEventPast = (event, now = new Date()) =>
+  getEventEndMs(event) < now.getTime();
+
+export const isEventWithinUpcomingWindow = (
+  event,
+  now = new Date(),
+  weeks = UPCOMING_WINDOW_WEEKS
+) => {
+  const windowEnd = new Date(now);
+  windowEnd.setDate(windowEnd.getDate() + weeks * 7);
+  return new Date(event.startsAt).getTime() <= windowEnd.getTime();
+};
+
+export const hasActiveDiscoveryQuery = (activeFilters, searchQuery) => {
+  if (searchQuery.trim()) return true;
+  return activeFilters.some((filterId) => filterId !== "all");
+};
+
+export const splitEventsForDisplay = (events, options = {}) => {
+  const {
+    now = new Date(),
+    upcomingWeeks = UPCOMING_WINDOW_WEEKS,
+    ignoreWindow = false,
+  } = options;
+
+  const upcoming = [];
+  const past = [];
+  const later = [];
+
+  for (const event of events) {
+    if (isEventPast(event, now)) {
+      past.push(event);
+      continue;
+    }
+    if (ignoreWindow || isEventWithinUpcomingWindow(event, now, upcomingWeeks)) {
+      upcoming.push(event);
+    } else {
+      later.push(event);
+    }
+  }
+
+  const sortAsc = (a, b) =>
+    new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime();
+  const sortDesc = (a, b) =>
+    new Date(b.startsAt).getTime() - new Date(a.startsAt).getTime();
+
+  upcoming.sort(sortAsc);
+  later.sort(sortAsc);
+  past.sort(sortDesc);
+
+  return { upcoming, past, later };
+};
+
+export const getUpcomingEvents = (events, options = {}) =>
+  splitEventsForDisplay(events, { ...options, ignoreWindow: true }).upcoming;
+
 export const FILTER_DEFINITIONS = [
   { id: "all", label: "All" },
   { id: "ai", label: "AI" },
@@ -91,14 +154,20 @@ export const filterEvents = (events, activeFilters, searchQuery) => {
   );
 };
 
-export const getStats = (events, savedCount) => {
+export const getStats = (events, savedCount, now = new Date()) => {
   const topics = new Set();
   events.forEach((e) => (e.topics ?? []).forEach((t) => topics.add(t)));
   const freeCount = events.filter(
     (e) => (e.price ?? "").toLowerCase() === "free"
   ).length;
+  const { upcoming, past } = splitEventsForDisplay(events, {
+    now,
+    ignoreWindow: false,
+  });
   return {
     total: events.length,
+    upcoming: upcoming.length,
+    archive: past.length,
     topics: topics.size,
     free: freeCount,
     saved: savedCount,

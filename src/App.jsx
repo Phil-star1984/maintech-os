@@ -3,7 +3,7 @@ import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
 import StatsStrip from "./components/StatsStrip";
-import EventGrid from "./components/EventGrid";
+import EventTimeline from "./components/EventTimeline";
 import EventDetail from "./components/EventDetail";
 import RandomEvent from "./components/RandomEvent";
 import EventNormalizer from "./components/EventNormalizer";
@@ -14,6 +14,7 @@ import RadarPage from "./components/RadarPage";
 import { fallbackEvents } from "./data/fallbackEvents";
 import {
   filterEvents,
+  getUpcomingEvents,
   getSavedIds,
   getStats,
   toggleSaved,
@@ -52,6 +53,7 @@ export default function App() {
   }, []);
 
   const filteredEvents = filterEvents(events, activeFilters, searchQuery);
+  const upcomingEvents = getUpcomingEvents(events);
   const stats = getStats(events, savedIds.length);
 
   const showToast = useCallback((message) => {
@@ -124,7 +126,7 @@ export default function App() {
       {activePage === "radar" ? (
         <>
           <RadarPage
-            events={events.length ? events : fallbackEvents}
+            events={events.length ? upcomingEvents : getUpcomingEvents(fallbackEvents)}
             savedIds={savedIds}
             onToggleSave={handleToggleSave}
             onOpenDetail={setSelectedEvent}
@@ -149,9 +151,11 @@ export default function App() {
                 {loading ? (
                   <p className="loading mono" role="status">&gt; loading events.json…</p>
                 ) : (
-                  <EventGrid
+                  <EventTimeline
                     events={filteredEvents}
                     totalCount={events.length}
+                    activeFilters={activeFilters}
+                    searchQuery={searchQuery}
                     savedIds={savedIds}
                     onToggleSave={handleToggleSave}
                     onOpenDetail={setSelectedEvent}
@@ -166,7 +170,7 @@ export default function App() {
 
           <div className="page">
             <main className="main">
-              <RandomEvent events={events} onOpenDetail={setSelectedEvent} />
+              <RandomEvent events={upcomingEvents} onOpenDetail={setSelectedEvent} />
               <EventNormalizer onCopyFeedback={showToast} />
             </main>
           </div>
