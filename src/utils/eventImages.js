@@ -1,13 +1,13 @@
-const DEFAULT_IMAGE = "/images/events/open-coding-night.jpg";
+const DEFAULT_IMAGE = "/images/events/meetup.jpg";
 
 const TOPIC_IMAGES = {
-  AI: "/images/events/llm-engineering-workshop.jpg",
-  Coding: "/images/events/open-coding-night.jpg",
-  Startup: "/images/events/startup-night-mainfranken.jpg",
-  Design: "/images/events/ux-ui-design-jam.jpg",
-  Data: "/images/events/data-science-meetup-wuerzburg.jpg",
-  Community: "/images/events/repair-cafe-tech-edition.jpg",
-  Hackathon: "/images/events/ai-vibe-hackathon-4.jpg",
+  AI: "/images/events/ai.jpg",
+  Coding: "/images/events/web.jpg",
+  Startup: "/images/events/startup.jpg",
+  Design: "/images/events/web.jpg",
+  Data: "/images/events/analytics.jpg",
+  Community: "/images/events/networking.jpg",
+  Hackathon: "/images/events/hackathon.jpg",
 };
 
 export const resolveEventImageForTopics = (topics) => {
