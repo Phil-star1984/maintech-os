@@ -244,10 +244,10 @@ export const fallbackEvents = [
       "AI enthusiasts",
       "General public"
     ],
-    "description": "Hands-on workshop: mit KI kreativ experimentieren, Musik und Bilder erstellen, einen eigenen Bot bauen und Einsatzmöglichkeiten reflektieren.",
-    "whyGo": "Passt perfekt zum MainTech-OS-Radar: niedrigschwelliger KI-Workshop mitten in Würzburg, mit Praxis statt nur Vortrag.",
+    "description": "Praxisworkshop im Level3: mit KI kreativ experimentieren, Musik und Bilder erstellen, einen eigenen Bot bauen und die Einsatzmöglichkeiten reflektieren.",
+    "whyGo": "Niedrigschwelliger KI-Workshop mitten in Würzburg — praktisch, kreativ und passend für Menschen, die KI nicht nur diskutieren, sondern ausprobieren wollen.",
     "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "signupUrl": "https://www.wuerzburg.de/themen/kultur-bildung-kulturangebot/stadtbuecherei/medienpdagogik/544218.Programm.html",
     "image": "/images/events/ai.jpg",
     "status": "upcoming"
   },
@@ -305,11 +305,11 @@ export const fallbackEvents = [
       "Operators",
       "Business developers"
     ],
-    "description": "Fortbildung und Netzwerktermin für Start-ups zur gezielten Skalierung: Wachstum passiert nicht zufällig, sondern muss bewusst gestaltet werden.",
-    "whyGo": "Passt zu MainTech OS, weil skalierbare Start-ups genau die Schnittstelle aus Tech, Produkt, Operations und regionalem Gründungsnetzwerk brauchen.",
+    "description": "Fortbildung und Netzwerktermin der Gründerzentren Würzburg im ZDI-Ideenlabor: Wie aus einem Start-up ein skalierbares Unternehmen wird.",
+    "whyGo": "Starker Fit für MainTech OS: Skalierung verbindet Produkt, Tech, Operations und das regionale Gründungsnetzwerk.",
     "sourceUrl": "https://www.gruenderzentren-wuerzburg.de/gruenderzentren/veranstaltungen/index.html",
     "signupUrl": "https://www.gruenderzentren-wuerzburg.de/gruenderzentren/veranstaltungen/index.html",
-    "image": "/images/events/founders.jpg",
+    "image": "/images/events/startup-night-mainfranken.jpg",
     "status": "upcoming"
   },
   {
@@ -335,11 +335,11 @@ export const fallbackEvents = [
       "Creators",
       "AI enthusiasts"
     ],
-    "description": "Medienpädagogisches KI-Angebot für Erziehende und pädagogisch Tätige in Kita, Hort, Schule und Jugendarbeit.",
+    "description": "Kleine Medienakademie im Level3: Was hat KI mit mir zu tun und wie kann sie in Kindergarten, Hort, Schule und Jugendarbeit sinnvoll helfen?",
     "whyGo": "Relevant für alle, die KI-Kompetenz praktisch in Bildung, Jugendarbeit und lokale Lernformate übersetzen wollen.",
-    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "image": "/images/events/ai.jpg",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/kleine-medienakademie-ki-und-du-du-und-die-ki-2603463.html",
+    "signupUrl": "https://www.wuerzburg.de/themen/kultur-bildung-kulturangebot/stadtbuecherei/medienpdagogik/544218.Programm.html",
+    "image": "/images/events/ai-tools-breakfast.jpg",
     "status": "upcoming"
   },
   {
@@ -428,10 +428,10 @@ export const fallbackEvents = [
       "Creators",
       "Community builders"
     ],
-    "description": "Austausch, Beratung und Praxisimpulse für medienpädagogisch Aktive im Level3 der Stadtbücherei Würzburg.",
-    "whyGo": "Ein guter lokaler Knotenpunkt, um Maker-, Lern- und Medienprojekte in Würzburg zu vernetzen.",
-    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "description": "Regelmäßiges Treffen im Level3 für medienpädagogisch Aktive: Austausch, Beratung und Praxisimpulse aus der Medienarbeit.",
+    "whyGo": "Guter lokaler Knotenpunkt, um Maker-, Lern- und Medienprojekte in Würzburg zu vernetzen — ohne Anmeldung, einfach vorbeikommen.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/maker-dates-treffen-von-medienpadagogisch-aktiven-2586205.html?view=list",
+    "signupUrl": "https://www.wuerzburg.de/themen/kultur-bildung-kulturangebot/stadtbuecherei/medienpdagogik/544218.Programm.html",
     "image": "/images/events/meetup.jpg",
     "status": "upcoming"
   },
@@ -523,11 +523,11 @@ export const fallbackEvents = [
       "Creators",
       "Young coders"
     ],
-    "description": "Einführung in Programmierung und Spieleentwicklung mit Scratch im Level3 der Stadtbücherei Würzburg.",
-    "whyGo": "Niedrigschwelliger Einstieg ins Coden und Prototyping — genau die Art Talent-Pipeline, die MainTech OS sichtbar machen will.",
-    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
-    "image": "/images/events/coding.jpg",
+    "description": "Ferienkurs im Level3: Mit Scratch Schritt für Schritt ein eigenes kleines Spiel bauen — mit Figuren, Regeln und persönlichem Design. Für Kinder ab 8 Jahren, Anmeldung erforderlich.",
+    "whyGo": "Niedrigschwelliger Einstieg ins Coden und Prototyping — genau die Talent-Pipeline, die MainTech OS sichtbar machen will.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/spieleentwicklung-mit-scratch-2620362.html",
+    "signupUrl": "https://www.wuerzburg.de/themen/kultur-bildung-kulturangebot/stadtbuecherei/medienpdagogik/544218.Programm.html",
+    "image": "/images/events/open-coding-night.jpg",
     "status": "upcoming"
   },
   {
