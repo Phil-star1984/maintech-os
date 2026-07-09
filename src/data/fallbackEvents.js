@@ -221,6 +221,37 @@ export const fallbackEvents = [
     "status": "upcoming"
   },
   {
+    "id": "level3-ki-experimentell-2026",
+    "title": "Level3: KI Experimentell",
+    "startsAt": "2026-07-13T16:00:00+02:00",
+    "endsAt": "2026-07-13T18:00:00+02:00",
+    "dateLabel": "13. Juli 2026",
+    "timeLabel": "16:00–18:00",
+    "location": "Falkenhaus Level3, Marktplatz 9, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "Stadtbücherei Würzburg / Level3",
+    "topics": [
+      "AI",
+      "Design",
+      "Community"
+    ],
+    "audience": [
+      "Students",
+      "Creators",
+      "AI enthusiasts",
+      "General public"
+    ],
+    "description": "Hands-on workshop: mit KI kreativ experimentieren, Musik und Bilder erstellen, einen eigenen Bot bauen und Einsatzmöglichkeiten reflektieren.",
+    "whyGo": "Passt perfekt zum MainTech-OS-Radar: niedrigschwelliger KI-Workshop mitten in Würzburg, mit Praxis statt nur Vortrag.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "image": "/images/events/ai.jpg",
+    "status": "upcoming"
+  },
+  {
     "id": "zdi-scale-up-2026-07-14",
     "title": "Herausforderung – Scale UP",
     "startsAt": "2026-07-14T15:00:00+02:00",
@@ -249,6 +280,66 @@ export const fallbackEvents = [
     "image": "/images/events/startup.jpg",
     "imageCredit": "Unsplash",
     "verified": true,
+    "status": "upcoming"
+  },
+  {
+    "id": "herausforderung-scaleup-2026",
+    "title": "Herausforderung – ScaleUP: Vom Start-up zum skalierbaren Unternehmen",
+    "startsAt": "2026-07-14T15:00:00+02:00",
+    "endsAt": "2026-07-14T17:00:00+02:00",
+    "dateLabel": "14. Juli 2026",
+    "timeLabel": "15:00–17:00",
+    "location": "Ideenlabor des ZDI, Rottendorfer Str. 71, 97074 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "Gründerzentren Würzburg / ZDI Mainfranken",
+    "topics": [
+      "Startup",
+      "Community"
+    ],
+    "audience": [
+      "Founders",
+      "Startups",
+      "Operators",
+      "Business developers"
+    ],
+    "description": "Fortbildung und Netzwerktermin für Start-ups zur gezielten Skalierung: Wachstum passiert nicht zufällig, sondern muss bewusst gestaltet werden.",
+    "whyGo": "Passt zu MainTech OS, weil skalierbare Start-ups genau die Schnittstelle aus Tech, Produkt, Operations und regionalem Gründungsnetzwerk brauchen.",
+    "sourceUrl": "https://www.gruenderzentren-wuerzburg.de/gruenderzentren/veranstaltungen/index.html",
+    "signupUrl": "https://www.gruenderzentren-wuerzburg.de/gruenderzentren/veranstaltungen/index.html",
+    "image": "/images/events/founders.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": "kleine-medienakademie-ki-und-du-2026",
+    "title": "Kleine Medienakademie: KI und Du – Du und die KI",
+    "startsAt": "2026-07-14T16:00:00+02:00",
+    "endsAt": "2026-07-14T18:00:00+02:00",
+    "dateLabel": "14. Juli 2026",
+    "timeLabel": "16:00–18:00",
+    "location": "Falkenhaus Level3, Marktplatz 9, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "Stadtbücherei Würzburg / Level3",
+    "topics": [
+      "AI",
+      "Community"
+    ],
+    "audience": [
+      "Educators",
+      "Students",
+      "Creators",
+      "AI enthusiasts"
+    ],
+    "description": "Medienpädagogisches KI-Angebot für Erziehende und pädagogisch Tätige in Kita, Hort, Schule und Jugendarbeit.",
+    "whyGo": "Relevant für alle, die KI-Kompetenz praktisch in Bildung, Jugendarbeit und lokale Lernformate übersetzen wollen.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "image": "/images/events/ai.jpg",
     "status": "upcoming"
   },
   {
@@ -314,6 +405,37 @@ export const fallbackEvents = [
     "status": "upcoming"
   },
   {
+    "id": "maker-dates-level3-2026",
+    "title": "Maker Dates – Treffen von medienpädagogisch Aktiven",
+    "startsAt": "2026-07-21T16:00:00+02:00",
+    "endsAt": "2026-07-21T18:00:00+02:00",
+    "dateLabel": "21. Juli 2026",
+    "timeLabel": "16:00–18:00",
+    "location": "Falkenhaus Level3, Marktplatz 9, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "Stadtbücherei Würzburg / Level3",
+    "topics": [
+      "Community",
+      "Coding",
+      "Design"
+    ],
+    "audience": [
+      "Makers",
+      "Educators",
+      "Creators",
+      "Community builders"
+    ],
+    "description": "Austausch, Beratung und Praxisimpulse für medienpädagogisch Aktive im Level3 der Stadtbücherei Würzburg.",
+    "whyGo": "Ein guter lokaler Knotenpunkt, um Maker-, Lern- und Medienprojekte in Würzburg zu vernetzen.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "image": "/images/events/meetup.jpg",
+    "status": "upcoming"
+  },
+  {
     "id": "wp-meetup-biergarten-2026-07-21",
     "title": "WordPress Würzburg – Biergarten Edition",
     "startsAt": "2026-07-21T19:00:00+02:00",
@@ -375,6 +497,37 @@ export const fallbackEvents = [
     "image": "/images/events/ai.jpg",
     "imageCredit": "Unsplash",
     "verified": true,
+    "status": "upcoming"
+  },
+  {
+    "id": "scratch-spieleentwicklung-level3-2026",
+    "title": "Spieleentwicklung mit Scratch",
+    "startsAt": "2026-08-04T16:00:00+02:00",
+    "endsAt": "2026-08-04T18:00:00+02:00",
+    "dateLabel": "4. August 2026",
+    "timeLabel": "16:00–18:00",
+    "location": "Falkenhaus Level3, Marktplatz 9, 97070 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "Beginner-friendly",
+    "organizer": "Stadtbücherei Würzburg / Level3",
+    "topics": [
+      "Coding",
+      "Design",
+      "Community"
+    ],
+    "audience": [
+      "Students",
+      "Beginners",
+      "Creators",
+      "Young coders"
+    ],
+    "description": "Einführung in Programmierung und Spieleentwicklung mit Scratch im Level3 der Stadtbücherei Würzburg.",
+    "whyGo": "Niedrigschwelliger Einstieg ins Coden und Prototyping — genau die Art Talent-Pipeline, die MainTech OS sichtbar machen will.",
+    "sourceUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "signupUrl": "https://termine.mainpost.de/veranstaltung/ki-experimentell-2620348.html",
+    "image": "/images/events/coding.jpg",
     "status": "upcoming"
   },
   {
