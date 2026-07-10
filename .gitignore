@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local working artifacts / generated pitch decks
+MainTechOS_Pitchdeck.pdf
+MainTechOS_Pitchdeck.pptx
+MainTechOS_Pitchdeck_Sprechtext.md
+
+# Local QA screenshots
+screenshots/
