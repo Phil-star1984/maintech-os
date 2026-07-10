@@ -625,5 +625,38 @@ export const fallbackEvents = [
     "imageCredit": "Unsplash",
     "verified": true,
     "status": "upcoming"
+  },
+  {
+    "id": "gruendungsmesse-mainfranken-2026-11-17",
+    "title": "Gründungsmesse Mainfranken 2026",
+    "startsAt": "2026-11-17T10:00:00+01:00",
+    "endsAt": "2026-11-17T17:00:00+01:00",
+    "dateLabel": "17. November 2026",
+    "timeLabel": "10:00–17:00",
+    "location": "IHK Würzburg-Schweinfurt, Mainaustraße 33–35, 97082 Würzburg",
+    "city": "Würzburg",
+    "format": "In person",
+    "price": "Free",
+    "level": "All levels",
+    "organizer": "IHK Würzburg-Schweinfurt",
+    "topics": [
+      "Startup",
+      "Business",
+      "Community"
+    ],
+    "audience": [
+      "Founders",
+      "Startups",
+      "Freelancers",
+      "Company successors"
+    ],
+    "description": "Kostenfreie Gründungsmesse mit über 20 Ausstellern, Beratung zu Existenzgründung und Unternehmensnachfolge sowie Netzwerkmesse für gründungsrelevante Initiativen aus Mainfranken.",
+    "whyGo": "Starker MainTech-OS-Fit: gebündeltes Gründerwissen, regionale Kontakte und konkrete Unterstützung für neue digitale Geschäftsmodelle.",
+    "sourceUrl": "https://events.wuerzburg.ihk.de/b?p=gruendungsmesse2026tln",
+    "signupUrl": "https://events.wuerzburg.ihk.de/b?p=gruendungsmesse2026tln",
+    "image": "/images/events/business.jpg",
+    "imageCredit": "Unsplash",
+    "verified": true,
+    "status": "upcoming"
   }
 ];
